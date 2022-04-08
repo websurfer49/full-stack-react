@@ -1,0 +1,16 @@
+.action-btn {
+  width: 22px;
+  height: 22px;
+}
+
+.counter > * + * {
+  margin-left: 4px;
+}
+
+.counter-container {
+  margin-top: 8px;
+}
+
+.counter-container > * + * {
+  margin-top: 4px;
+}
