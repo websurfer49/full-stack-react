@@ -1,16 +1,41 @@
-.action-btn {
-  width: 22px;
-  height: 22px;
+body {
+  margin: 0;
 }
 
-.counter > * + * {
-  margin-left: 4px;
+.header {
+  height: 50px;
+  background: #c4c3c3;
+  font-size: 30px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.counter-container {
-  margin-top: 8px;
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background: #c4c3c3;
 }
 
-.counter-container > * + * {
+.main {
+  padding: 12px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  padding: 2px;
+}
+
+.task + .task {
   margin-top: 4px;
+}
+
+.task > * + * {
+  margin-left: 4px;
 }

@@ -1,11 +1,36 @@
 const express = require("express");
 const cors = require("cors");
+const { Pool } = require("pg");
+
+const pool = new Pool({
+  database: "tasktime",
+});
 
 const app = express();
 app.use(cors());
+app.use(express.json());
 
-app.get("/api/stuff", (req, res) => {
-  res.send("stuff");
+app.get("/api/tasks", (req, res) => {
+  pool.query("SELECT * FROM tasks").then((result) => {
+    res.send(result.rows);
+  });
+});
+
+app.delete("/api/tasks/:id", async (req, res) => {
+  const { id } = req.params;
+
+  await pool.query("DELETE FROM tasks WHERE id = $1", [id]);
+  res.sendStatus(200);
+});
+
+app.patch("/api/tasks/:id", async (req, res) => {
+  const { id } = req.params;
+  const { description } = req.body;
+  const result = await pool.query(
+    "UPDATE tasks SET description=$1 WHERE id=$2 RETURNING *",
+    [description, id]
+  );
+  res.send(result.rows[0]);
 });
 
 app.listen(3000, () => {
