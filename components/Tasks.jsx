@@ -1,9 +1,9 @@
 import React from "react";
 import Task from "./Task.jsx";
 
-const Tasks = ({ tasks, deleteTask, editTask }) => {
+const Tasks = ({ tasks }) => {
   return tasks.map(task => (
-    <Task key={task.id} task={task} deleteTask={deleteTask} editTask={editTask} />
+    <Task key={task.id} task={task} />
   ));
 };
 
