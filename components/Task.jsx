@@ -49,7 +49,7 @@ const Task = ({ task }) => {
             <input value={currentValue} onChange={e => setCurrentValue(e.target.value)} />
           </form>
         )
-        : <span onClick={() => setIsEditing(true)}>{task.description}</span>
+        : <span data-testid="description" onClick={() => setIsEditing(true)}>{task.description}</span>
       }
       <button onClick={() => deleteTask(task.id)}>X</button>
     </div>

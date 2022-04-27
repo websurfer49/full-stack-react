@@ -12,11 +12,11 @@ afterAll(() => {
   pool.end();
 });
 
-test("GET /api/tasks", async () => {
+test.skip("GET /api/tasks", async () => {
   const response = await supertest(server).get("/api/tasks").expect(200);
   expect(response.body).toEqual([]);
 });
 
-test("DELETE /api/tasks", async () => {
+test.skip("DELETE /api/tasks", async () => {
   await supertest(server).delete("/api/tasks/3").expect(200);
 });
