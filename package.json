@@ -6,14 +6,17 @@
   "scripts": {
     "dev": "concurrently \"npm:dev:*\"",
     "dev:frontend": "snowpack dev",
-    "dev:backend": "nodemon server.js"
+    "dev:backend": "nodemon index.js",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^7.1.0",
+    "jest": "^28.0.2",
     "nodemon": "^2.0.15",
-    "snowpack": "^3.8.8"
+    "snowpack": "^3.8.8",
+    "supertest": "^6.2.3"
   },
   "dependencies": {
     "cors": "^2.8.5",
