@@ -40,3 +40,7 @@ body {
 .task > * + * {
   margin-left: 4px;
 }
+
+.task-form {
+  margin-bottom: 12px;
+}

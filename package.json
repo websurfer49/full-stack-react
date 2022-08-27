@@ -1,39 +1,29 @@
 {
-  "name": "react-kickoff",
+  "name": "full-stack-react",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "concurrently \"npm:dev:*\"",
-    "dev:frontend": "snowpack dev",
-    "dev:backend": "nodemon index.js",
-    "test:frontend": "jest components/**",
-    "test:backend": "jest server.test.js"
+    "dev:client": "vite serve",
+    "dev:server": "nodemon server/index.js",
+    "test": "vitest"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "@babel/preset-env": "^7.16.11",
-    "@babel/preset-react": "^7.16.7",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^12.1.5",
+    "@testing-library/react": "^13.3.0",
     "concurrently": "^7.1.0",
-    "jest": "^28.0.2",
-    "jest-environment-jsdom": "^28.0.2",
+    "happy-dom": "^6.0.4",
     "nodemon": "^2.0.15",
-    "react-test-renderer": "^17.0.2",
-    "snowpack": "^3.8.8",
-    "supertest": "^6.2.3"
+    "vite": "^3.0.9",
+    "vitest": "^0.22.1"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "cors": "^2.8.5",
     "express": "^4.17.3",
     "pg": "^8.7.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "recoil": "^0.7.2"
-  },
-  "jest": {
-    "testEnvironment": "jsdom"
   }
 }
