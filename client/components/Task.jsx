@@ -56,7 +56,7 @@ const Task = ({ task }) => {
       ) : (
         <span onClick={() => setIsEditing(true)}>{task.description}</span>
       )}
-      <button onClick={() => deleteTask(task.id)}>X</button>
+      <button onClick={() => deleteTask(task.id)}>delete</button>
     </div>
   );
 };
