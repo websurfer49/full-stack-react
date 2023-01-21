@@ -47,7 +47,7 @@ const Task = ({ task }) => {
           <label>
             Description
             <input
-              name="description"
+              name="des"
               value={currentValue}
               onChange={(e) => setCurrentValue(e.target.value)}
             />
