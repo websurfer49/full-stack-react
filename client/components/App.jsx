@@ -4,6 +4,7 @@ import Footer from "./Footer.jsx";
 import Tasks from "./Tasks.jsx";
 import TaskForm from "./TaskForm.jsx";
 import { tasksState } from "../state.js";
+import Search from "./Search.jsx";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -15,6 +16,7 @@ const App = () => {
       .then((res) => res.json())
       .then((tasks) => {
         console.log(tasks);// setTasks(tasks);
+        setTasks(tasks);
       });
   }, []);
 
@@ -22,6 +24,7 @@ const App = () => {
     <>
       <Header />
       <main className="main">
+        <Search tasks={tasks} />
         <TaskForm />
         <Tasks tasks={tasks} />
       </main>
