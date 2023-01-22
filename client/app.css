@@ -1,5 +1,11 @@
 body {
   margin: 0;
+  background-image: url(https://www.animationconnection.com/assets/artwork/1616422391-658-5491-simpsons-original-background-employment-office.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  backdrop-filter: contrast(0.4);
+  height: 100vh;
 }
 
 .header {
@@ -13,10 +19,10 @@ body {
 }
 
 .footer {
-  position: fixed;
+  /* position: fixed;
   bottom: 0;
   left: 0;
-  right: 0;
+  right: 0; */
   text-align: center;
   background: #c4c3c3;
 }
@@ -43,4 +49,96 @@ body {
 
 .task-form {
   margin-bottom: 12px;
+}
+
+.searchwrapper {
+  margin-bottom: 8%;
+}
+
+.searchwrapper form{
+text-align: center;
+max-width: fit-content;
+margin: 0 30px 0 30px;
+}
+
+.searchwrapper form *{
+  display: block;
+}
+
+.searchwrapper form input, .employerwrapper form input{
+  padding: 8px;
+  border-radius: 10px;
+  margin: 0 auto 10px;
+}
+
+.searchwrapper form button, .employerwrapper form button{
+  background-color: rgb(21, 100, 131);
+color: white;
+padding: 8px;
+border-radius: 8px;
+border: none;
+width: 100%;
+margin: 0 auto;
+}
+
+.searchresults {
+  text-align: center;
+}
+
+table{
+width: 100%;
+border-collapse:collapse;
+color: white;
+
+
+}
+ th, td{
+  border: 1px solid #000;
+  padding: 10px;
+
+}
+tr:nth-child(even){
+  background-color:#bbbbbb54;
+  
+}
+
+.imagesidebyside{
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+.imagewrapper{
+  width: 300px;
+  height: 200px;
+  border: 3px solid black;
+}
+
+
+.imagewrapper img{
+  width: 100%;
+  height: 100%;
+object-fit: fill;
+}
+
+.employerwrapper{
+  text-align: center;
+
+}
+
+.employerwrapper form *{
+  display: block;
+}
+
+.employerwrapper form{
+  max-width: fit-content;
+  margin: 0 auto;
+} 
+
+h2{
+  color: white;
+}
+
+.verticalimg{
+display: flex;
+flex-direction: column;
 }

@@ -5,6 +5,7 @@ import Tasks from "./Tasks.jsx";
 import TaskForm from "./TaskForm.jsx";
 import { tasksState } from "../state.js";
 import Search from "./Search.jsx";
+import EmployeeForm from "./EmployeeForm.jsx";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -25,8 +26,9 @@ const App = () => {
       <Header />
       <main className="main">
         <Search tasks={tasks} />
-        <TaskForm />
-        <Tasks tasks={tasks} />
+        <EmployeeForm/>
+        {/* <TaskForm />
+        <Tasks tasks={tasks} /> */}
       </main>
       <Footer />
     </>
