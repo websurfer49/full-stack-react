@@ -6,10 +6,11 @@ const EmployeeForm = () => {
         salary: '',
         location: ''
     })
+    
     const handleChange = (e) => {
         setAddedData({...addedData, [e.target.name]: e.target.value });
-      
     }
+
     const handlesubmit = (e) => {
         e.preventDefault();
 
