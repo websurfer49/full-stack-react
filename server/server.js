@@ -1,8 +1,9 @@
 import express from "express";
 import cors from "cors";
 import pg from "pg";
+import postgres from "postgres";
 
-const pool = new pg.Pool({
+const sql = postgres({
     user: "lucas", password: '123',
     database: "mytest",
 });
@@ -13,26 +14,20 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/joblistings", (req, res) => {
-    pool.query("SELECT * FROM joblistings").then((result) => {
-        res.send(result.rows);
+    sql`SELECT * FROM joblistings`.then((result) => {
+        res.json(result);
     });
 });
 
-app.listen(3000);
-
-/////////////////////// post
-
-
-app.post('/joblisting', (req, res) => {
-    let user = req.body;
-    pool.query('INSERT INTO joblistings (title) VALUES ("")', [search.title], (err, result) => {
-        if (err) {
-            res.status(500).send(err.stack);
-        } else {
-            res.send(result.rows);
-            res.status
-            console.log(res.status)
-        }})
+app.post("/joblistings", (req, res) => {
+    const job = req.body
+    const requiredFields = ["title", "salary", "location" ];
+    const {title, salary, location} = job;
+    sql`INSERT INTO joblistings (title, salary, location) VALUES (${title}, ${salary}, ${location})RETURNING *`.then((result) => {
+        
+        res.json(result);
     }
-)
-    
+    );
+});
+
+app.listen(3000);
