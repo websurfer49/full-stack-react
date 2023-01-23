@@ -20,4 +20,19 @@ app.get("/joblistings", (req, res) => {
 
 app.listen(3000);
 
+/////////////////////// post
 
+
+app.post('/joblisting', (req, res) => {
+    let user = req.body;
+    pool.query('INSERT INTO joblistings (title) VALUES ("")', [search.title], (err, result) => {
+        if (err) {
+            res.status(500).send(err.stack);
+        } else {
+            res.send(result.rows);
+            res.status
+            console.log(res.status)
+        }})
+    }
+)
+    

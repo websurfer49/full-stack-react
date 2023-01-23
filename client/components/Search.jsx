@@ -48,32 +48,29 @@ function Search(props) {
                 </div>
             </div>
             <div className="searchresults">
-                {returnedResults.length > 0 &&
-                    <div>
+                {returnedResults.length > 0 && (<div>
                         <h2>Search Results</h2>
                         <table>
                             <thead>
                                 <tr>
-                                    <th>
-                                        Title
-                                    </th>
-                                    <th>
-                                        Salary
-                                    </th>
-                                    <th>
-                                        Location
-                                    </th>
+                                    <th>Title</th>
+                                    <th>Salary</th>
+                                    <th>Location</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {returnedResults.map((resultss, index) => {
-                                    return <tr key={index}><td>{resultss.title}</td> <td>{resultss.salary}</td> <td>{resultss.location}</td></tr>
+                                    return <tr key={index}>
+                                        <td>{resultss.title}</td>
+                                        <td>{resultss.salary}</td>
+                                        <td>{resultss.location}</td>
+                                    </tr>
                                 })}
                             </tbody>
                         </table>
 
                     </div>
-                }
+                )}
             </div>
         </div>
 
