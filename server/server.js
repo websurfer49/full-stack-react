@@ -21,10 +21,9 @@ app.get("/joblistings", (req, res) => {
 
 app.post("/joblistings", (req, res) => {
     const job = req.body
-    const requiredFields = ["title", "salary", "location" ];
+    // const requiredFields = ["title", "salary", "location" ];
     const {title, salary, location} = job;
     sql`INSERT INTO joblistings (title, salary, location) VALUES (${title}, ${salary}, ${location})RETURNING *`.then((result) => {
-        
         res.json(result);
     }
     );
